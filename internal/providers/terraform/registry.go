@@ -9,6 +9,7 @@ import (
 	"github.com/infracost/infracost/internal/providers/terraform/aws"
 	"github.com/infracost/infracost/internal/providers/terraform/azure"
 	"github.com/infracost/infracost/internal/providers/terraform/google"
+	"github.com/infracost/infracost/internal/providers/terraform/ibm"
 )
 
 type ResourceRegistryMap map[string]*schema.RegistryItem
@@ -46,6 +47,14 @@ func GetResourceRegistryMap() *ResourceRegistryMap {
 		for _, registryItem := range createFreeResources(google.FreeResources, google.GetDefaultRefIDFunc) {
 			resourceRegistryMap[registryItem.Name] = registryItem
 		}
+
+		for _, registryItem := range ibm.ResourceRegistry {
+			resourceRegistryMap[registryItem.Name] = registryItem
+		}
+		// for _, registryItem := range createFreeResources(ibm.FreeResources) {
+		// 	resourceRegistryMap[registryItem.Name] = registryItem
+		// }
+
 	})
 
 	return &resourceRegistryMap
@@ -81,11 +90,12 @@ func GetUsageOnlyResources() []string {
 	r = append(r, aws.UsageOnlyResources...)
 	r = append(r, azure.UsageOnlyResources...)
 	r = append(r, google.UsageOnlyResources...)
+	r = append(r, ibm.UsageOnlyResources...)
 	return r
 }
 
 func HasSupportedProvider(rType string) bool {
-	return strings.HasPrefix(rType, "aws_") || strings.HasPrefix(rType, "google_") || strings.HasPrefix(rType, "azurerm_")
+	return strings.HasPrefix(rType, "aws_") || strings.HasPrefix(rType, "google_") || strings.HasPrefix(rType, "azurerm_") || strings.HasPrefix(rType, "ibm_")
 }
 
 func createFreeResources(l []string, defaultRefsFunc schema.ReferenceIDFunc) []*schema.RegistryItem {

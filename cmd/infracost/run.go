@@ -191,6 +191,7 @@ func runMain(cmd *cobra.Command, runCtx *config.RunContext) error {
 		go formatHCLProjects(wg, runCtx, hclProjects, hclR)
 	}
 
+	log.Errorf("ToOutputFormat ...")
 	r, err := output.ToOutputFormat(projects)
 	if err != nil {
 		return err

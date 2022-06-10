@@ -1,0 +1,81 @@
+
+ Name                                                                              Monthly Qty  Unit   Monthly Cost 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-cluster-ec2.aws_instance.this[0]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-cluster-ec2.aws_instance.this[1]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-cluster-ec2.aws_instance.this[2]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-location-ec2.aws_instance.this[0]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-location-ec2.aws_instance.this[1]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat01"].module.satellite-location-ec2.aws_instance.this[2]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-cluster-ec2.aws_instance.this[0]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-cluster-ec2.aws_instance.this[1]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-cluster-ec2.aws_instance.this[2]                                    
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-location-ec2.aws_instance.this[0]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-location-ec2.aws_instance.this[1]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ module.satellite-aws["sat02"].module.satellite-location-ec2.aws_instance.this[2]                                   
+ ├─ Instance usage (Linux/UNIX, on-demand, m5d.xlarge)                                     730  hours       $164.98 
+ └─ root_block_device                                                                                               
+    └─ Storage (general purpose SSD, gp2)                                                    8  GB            $0.80 
+                                                                                                                    
+ OVERALL TOTAL                                                                                            $1,989.36 
+──────────────────────────────────
+60 cloud resources were detected:
+∙ 12 were estimated, all of which include usage-based costs, see https://infracost.io/usage-file
+∙ 38 were free:
+  ∙ 12 x aws_security_group_rule
+  ∙ 6 x aws_route_table_association
+  ∙ 6 x aws_subnet
+  ∙ 4 x aws_route
+  ∙ 2 x aws_internet_gateway
+  ∙ 2 x aws_key_pair
+  ∙ 2 x aws_route_table
+  ∙ 2 x aws_security_group
+  ∙ 2 x aws_vpc
+∙ 10 are not supported yet, see https://infracost.io/requested-resources:
+  ∙ 6 x ibm_satellite_host
+  ∙ 2 x aws_placement_group
+  ∙ 2 x ibm_satellite_location

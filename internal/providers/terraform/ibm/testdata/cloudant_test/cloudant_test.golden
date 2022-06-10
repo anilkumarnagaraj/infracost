@@ -1,0 +1,31 @@
+
+ Name                                               Monthly Qty  Unit            Monthly Cost 
+                                                                                              
+ ibm_cloudant.cloudant_standard                                                               
+ ├─ Read capacity (100 Reads/sec)                             1  months                 $0.00 
+ ├─ Write capacity (50 writes/sec)                            1  months                 $0.00 
+ ├─ Global query capacity (5 global queries/sec)              1  months                 $0.00 
+ └─ Additional consumption-based charges          Monthly cost depends on usage: $0.00 per GB 
+                                                                                              
+ ibm_cloudant.ibm_cloudant                                                                    
+ ├─ Read capacity (100 Reads/sec)                             1  months                 $0.00 
+ ├─ Write capacity (50 writes/sec)                            1  months                 $0.00 
+ ├─ Global query capacity (5 global queries/sec)              1  months                 $0.00 
+ └─ Additional consumption-based charges          Monthly cost depends on usage: $0.00 per GB 
+                                                                                              
+ OVERALL TOTAL                                                                          $0.00 
+──────────────────────────────────
+3 cloud resources were detected:
+∙ 2 were estimated, all of which include usage-based costs, see https://infracost.io/usage-file
+∙ 1 was free:
+  ∙ 1 x ibm_cloudant
+Logs:
+
+level=warning msg="No products found for ibm_cloudant.cloudant_standard Additional consumption-based charges, using 0.00"
+level=warning msg="No products found for ibm_cloudant.cloudant_standard Global query capacity (5 global queries/sec), using 0.00"
+level=warning msg="No products found for ibm_cloudant.cloudant_standard Read capacity (100 Reads/sec), using 0.00"
+level=warning msg="No products found for ibm_cloudant.cloudant_standard Write capacity (50 writes/sec), using 0.00"
+level=warning msg="No products found for ibm_cloudant.ibm_cloudant Additional consumption-based charges, using 0.00"
+level=warning msg="No products found for ibm_cloudant.ibm_cloudant Global query capacity (5 global queries/sec), using 0.00"
+level=warning msg="No products found for ibm_cloudant.ibm_cloudant Read capacity (100 Reads/sec), using 0.00"
+level=warning msg="No products found for ibm_cloudant.ibm_cloudant Write capacity (50 writes/sec), using 0.00"

@@ -75,6 +75,10 @@ test_cmd:
 test_update_cmd:
 	INFRACOST_LOG_LEVEL=warn go test -timeout 30m $(LD_FLAGS) ./cmd/infracost $(or $(ARGS), -update -v -cover)
 
+ # Run IBM resource tests
+test_ibm:
+	INFRACOST_LOG_LEVEL=info go test -timeout 30m $(LD_FLAGS) ./internal/providers/terraform/ibm $(or $(ARGS), -v -cover)	
+
 # Run AWS resource tests
 test_aws:
 	INFRACOST_LOG_LEVEL=warn go test -timeout 30m $(LD_FLAGS) ./internal/providers/terraform/aws $(or $(ARGS), -v -cover)

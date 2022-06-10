@@ -452,7 +452,7 @@ SELECT DISTINCT "service", "productFamily", "attributes" FROM products WHERE "ve
 Great! It looks like we found our service records. And we're down to only 15 records. They may have enough information to find the patterns to match a specific service feature.
 
 We want to see what defines the "enabled protocol" and what values define the specific protocol. Among all `attributes`' values, we can highlight `data`, `operation` and `usagetype`. Let's see how they look without all other noise:
-
+                                                                         
 ```sql
 SELECT DISTINCT "service", "productFamily", "attributes"->>'data' AS data, "attributes"->>'operation' AS operation, "attributes"->>'usagetype' AS usagetype FROM products WHERE "vendorName" = 'aws' AND "service" = 'AWSTransfer' AND region = 'us-east-1';
 ```
@@ -478,7 +478,7 @@ SELECT DISTINCT "service", "productFamily", "attributes"->>'data' AS data, "attr
 (15 rows)
 ```
 
-Much cleaner! We can see different protocols and different "usage types". However, `AWS Transfer for SFTP` records stand out as there are no similar records for other protocols. It's time to bring the last piece of the puzzle - prices.
+Much cleaner! We can see different protocols and different "usage types". However, `AWS Transfer for SFTP` records stand out as there are   22w    80similar records for other protocols. It's time to bring the last piece of the puzzle - prices.
 
 ```sql
 SELECT DISTINCT "service", "productFamily", "attributes"->>'data' AS data, "attributes"->>'operation' AS operation, "attributes"->>'usagetype' AS usagetype, prices FROM products WHERE "vendorName" = 'aws' AND "service" = 'AWSTransfer' AND region = 'us-east-1';
@@ -486,7 +486,7 @@ SELECT DISTINCT "service", "productFamily", "attributes"->>'data' AS data, "attr
 
 ```
    service   |     productFamily     |        data         | operation |     usagetype      |                                                                                                                                                                                                               prices                                                                                                                                                                                                               
--------------+-----------------------+---------------------+-----------+--------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------+-----------------------+---------------------+-----------+--------------------   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  AWSTransfer | AWS Transfer Family   | FTP-Download-Bytes  | FTP:S3    | USE1-DownloadBytes | {"3ee6535426a0bf75d16267a394ee64c0-dcaa14181f6c95f2f4f3e4ccf3fee63a": [{"USD": "0.0400000000", "unit": "GigaBytes", "priceHash": "3ee6535426a0bf75d16267a394ee64c0-dcaa14181f6c95f2f4f3e4ccf3fee63a", "description": "$0.04 per GigaByte downloaded over FTP from S3 in US East (N. Virginia)", "endUsageAmount": "Inf", "purchaseOption": "on_demand", "startUsageAmount": "0", "effectiveDateStart": "2021-11-01T00:00:00Z"}]}
  AWSTransfer | AWS Transfer Family   | FTP-None            | FTP:S3    | USE1-ProtocolHours | {"1e3ef5c6622041fcc4988e4258d5fc04-e7eda77c4cf52b2a5e814c7059c2e4c8": [{"USD": "0.3000000000", "unit": "Hourly", "priceHash": "1e3ef5c6622041fcc4988e4258d5fc04-e7eda77c4cf52b2a5e814c7059c2e4c8", "description": "$0.3 per Hour for FTP in US East (N. Virginia)", "endUsageAmount": "Inf", "purchaseOption": "on_demand", "startUsageAmount": "0", "effectiveDateStart": "2021-11-01T00:00:00Z"}]}
  AWSTransfer | AWS Transfer Family   | FTP-Upload-Bytes    | FTP:S3    | USE1-UploadBytes   | {"8ed7d604e191d4a2905e674cd452e59c-dcaa14181f6c95f2f4f3e4ccf3fee63a": [{"USD": "0.0400000000", "unit": "GigaBytes", "priceHash": "8ed7d604e191d4a2905e674cd452e59c-dcaa14181f6c95f2f4f3e4ccf3fee63a", "description": "$0.04 per GigaByte uploaded over FTP to S3 in US East (N. Virginia)", "endUsageAmount": "Inf", "purchaseOption": "on_demand", "startUsageAmount": "0", "effectiveDateStart": "2021-11-01T00:00:00Z"}]}
@@ -584,7 +584,7 @@ Output does not match golden file:
 
 It shows the cost `$219.00` now, matching the price calculator page results! Success!
 
-> Note: It is very important to ensure that there are **no warnings** about "Multiple products found", "No products found for" or "No prices found for" in the logs. These warnings indicate that the price filters have an issue.
+> Note: It is very important to ensure that there are **no warnings** about "Multiple products found", "ER3R                            31 Iucts found for" or "No prices found for" in the logs. These warnings indicate that the price filters have an issue.
 
 But it shows only one protocol. What if the resource has several? Let's find out!
 

@@ -7,6 +7,9 @@ resource_usage:
   #
   # Terraform AWS resources
   #
+  ibm_cloudant.cloudant_standard:
+    monthly_requests: 75 # Monthly requests to the Lambda function.
+    
   aws_acmpca_certificate_authority.my_private_ca:
     monthly_requests: 20000 # Monthly private certificate requests.
 

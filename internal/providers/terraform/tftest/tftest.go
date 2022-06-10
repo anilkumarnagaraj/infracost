@@ -41,6 +41,10 @@ var tfProviders = `
 			azurerm = {
 				source  = "hashicorp/azurerm"
 			}
+			ibm = {
+				source = "IBM-Cloud/ibm"
+				version = "1.42.0-beta0"
+			  } 
 		}
 	}
 
@@ -69,6 +73,9 @@ var tfProviders = `
 	provider "azurerm" {
 		skip_provider_registration = true
 		features {}
+	}
+
+	provider "ibm" {
 	}
 `
 
